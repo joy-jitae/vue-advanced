@@ -1,9 +1,10 @@
 <template>
     <div>
-        <div v-for="(job,index) in this.$store.state.jobs" :key="index">
+        <p v-for="(job,index) in this.$store.state.jobs" :key="index">
+            <a :href="job.url">{{job.title}}</a>
+            <small>{{job.time_ago}} {{ job.domain }}</small>
+        </p>
 
-            {{job.title}}
-        </div>
     </div>
 </template>
 
@@ -15,9 +16,7 @@ export default {
     }
 }
 
-
 </script>
-
 
 <style>
 

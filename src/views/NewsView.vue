@@ -1,8 +1,9 @@
 <template>
     <div>
-        <div v-for="(user, index) in this.$store.state.news" v-bind:key="index">
-            {{user.title}}
-        </div>
+        <p v-for="(item, index) in this.$store.state.news" v-bind:key="index">
+            <a v-bind:href="item.url">{{item.title}}</a>
+            <small>{{item.time_ago}} by {{item.user}}</small>
+        </p>
     </div>
 </template>
 
@@ -10,24 +11,11 @@
 
 
 export default {
-    
+
     created () {
         this.$store.dispatch('FETCH_NEWS');
-        // var vm = this;
-
-        // console.log('호출 전 : ', this);
-
-        // fetchNewsList()
-        // .then(function(response) {
-        //     console.log(response);
-        //     console.log('호출 후 : ', this);
-        //     vm.users = response.data;
-        // })
-        // .catch(function(error){
-        //     console.log(error)
-        // })
     }
-    
+
 }
 </script>
 

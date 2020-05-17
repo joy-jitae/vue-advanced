@@ -1,21 +1,22 @@
 <template>
     <div>
-        <div v-for="(ask, index) in askItems" :key="index">
-            {{ask.title}}
-        </div>
+        <p v-for="(item, index) in fetchedAsk" v-bind:key="index">
+            <a v-bind:href="item.url">{{item.title}}</a>
+            <small>{{item.time_ago}} by {{item.user}}</small>
+        </p>
     </div>
 </template>
 
 <script>
 
-import { maptState, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
 
     computed : {
     	//3
         ...mapGetters({
-            askItems : 'fetchedAsk'
+	        fetchedAsk : 'fetchedAsk'
         })
 
         /* #2
@@ -30,9 +31,6 @@ export default {
         * */
     },
 
-    created() {
-        this.$store.dispatch('FETCH_ASKS');
-    }
 
 }
 </script>
@@ -40,3 +38,4 @@ export default {
 <style>
 
 </style>
+
