@@ -9,28 +9,13 @@
 
 <script>
 
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 
 export default {
 
-    computed : {
-    	//3
-        ...mapGetters({
-	        fetchedAsk : 'fetchedAsk'
-        })
-
-        /* #2
-        ...maptState({
-            fetchedAsk : state => state.ask
-        })*/
-
-        /* #1
-        * ask() {
-        * return this.$store.state.ask
-        * }
-        * */
-    },
-
+    created () {
+        this.$store.dispatch('FETCH_ASKS');
+    }
 
 }
 </script>
