@@ -32,7 +32,7 @@ export const router = new VueRouter({
             component: JobsView
         },
         {
-            path: '/user/:id',
+            path: '/user/:id',      // 동적 라우트 매칭의 원리
             component : UserView
 
         }
