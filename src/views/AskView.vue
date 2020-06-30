@@ -14,7 +14,7 @@
 export default {
 
     created () {
-        this.$store.dispatch('FETCH_ASKS');
+        // this.$store.dispatch('FETCH_ASKS');
     }
 
 }
