@@ -5,7 +5,7 @@ import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
 import UserView from '../views/UserView';
-
+import ItemView from '../views/ItemView';
 
 Vue.use(VueRouter);
 
@@ -35,6 +35,10 @@ export const router = new VueRouter({
             path: '/user/:id',      // 동적 라우트 매칭의 원리
             component : UserView
 
+        },
+        {
+            path: '/item',
+            component: ItemView
         }
     ]
 });
