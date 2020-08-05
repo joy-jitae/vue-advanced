@@ -27,9 +27,16 @@ import {  mapGetters } from 'vuex'
 
 export default {
     computed: {
-        ...mapGetters({
-            fetchedAsk : 'fetchedAsk' 
-        }),
+
+        ...mapGetters([
+            // fetchedAsk 를 바로 객체로 사용하고 싶으면 mapGetters 에서 fetchedAsk 라고 선언만 해주면 된다.
+            'fetchedAsk' 
+        ]),
+
+        // #3
+        // ...mapGetters({
+        //     fetchedAsk : 'fetchedAsk' 
+        // }),
 
         // #2 
         // ...mapState({
