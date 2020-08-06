@@ -28,6 +28,13 @@ body {
   padding : 0;
   margin : 0;
 }
+a{
+  /* 클릭이 되었던거에 대해서 밑줄이 그어져있는것을 none 으로 바꿔주는거 */
+  text-decoration: none;    
+}
+a.router-link-exact-active {
+  text-decoration: underline;
+}
 
 /* Router Transition */
 .page-enter-active, .page-leave-active {
