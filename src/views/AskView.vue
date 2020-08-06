@@ -1,7 +1,6 @@
 <template>
     <div>
         <div v-for="(item, index) in fetchedAsk" v-bind:key="index"> 
-            {{ item.title}}
             <router-link :to="`item/${item.id}`">
                 {{item.title}}
             </router-link>
